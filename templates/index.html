@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}TEST BLOCK{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Hello, Nick</h1>
+<div class="container text-center">
+  <div class="row">
+    {% for note in notes %}
+     <div class="col-4">
+       {% include "note.html" %}
+     </div>
+    {% endfor %}
+  </div>
+
+  {% include "add_note.html" %}
+</div>
+
+{% endblock %}
