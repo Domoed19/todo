@@ -7,7 +7,7 @@ from notes.models import Note
 def index(request):
     notes = Note.objects.all()
     if request.method == "POST":
-         form = AddNoteForm(request.POST)
+        form = AddNoteForm(request.POST)
         if form.is_valid():
             Note.objects.create(
                 author=request.user, title=form.cleaned_data["title"], text=form.cleaned_data["text"]
